@@ -9,7 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        home_banner: "./public/banner.jpg",
+        home_banner: "url('/banner.svg')",
+      },
+      colors: {
+        btnColor: "var(--btn-color)",
       },
     },
   },

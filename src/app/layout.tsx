@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={Jarkarta.className}>{children}</body>
+      <body className={Bebas.className}>{children}</body>
     </html>
   );
 }
