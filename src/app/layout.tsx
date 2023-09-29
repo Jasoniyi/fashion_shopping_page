@@ -15,8 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={Bebas.className}>{children}</body>
-      <Footer />
+      <body className={Bebas.className}>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
