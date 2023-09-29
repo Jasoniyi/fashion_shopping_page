@@ -4,6 +4,11 @@
 
 :root {
   --btn-color: #d99655;
+  --desc-text: #504c48;
+  --shopping-cart-bck: #fff0e3;
+  --border-color: #504c48;
+  --footer-color: #1e1c1a;
+  --footer-white: #fffdf9;
 }
 
 @media (prefers-color-scheme: dark) {
