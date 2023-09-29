@@ -1,12 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Bebas_Neue } from "next/font/google";
-
-const Jarkarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
-const Bebas = Bebas_Neue({
-  subsets: ["latin"],
-  weight: "400",
-});
+import { Bebas } from "./Fonts/Fonts";
+import Footer from "./component/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={Bebas.className}>{children}</body>
+      <Footer />
     </html>
   );
 }
