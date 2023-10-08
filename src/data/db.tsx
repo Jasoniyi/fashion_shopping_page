@@ -1,0 +1,223 @@
+import { productImages } from "../constants/imagePaths";
+
+export interface ProductsShape {
+  image: string;
+  title: string;
+  price: number;
+  category: string;
+  sex: string;
+}
+
+export const productsArray: ProductsShape[] = [
+  {
+    image: `${productImages.MinimalistStyle}`,
+    title: "Minimalist-style",
+    price: 390000.0,
+    category: "clothes",
+    sex: "female",
+  },
+  {
+    image: `${productImages.steadyMode}`,
+    title: "Steady Mode",
+    price: 500000.0,
+    category: "clothes",
+    sex: "male",
+  },
+  {
+    image: `${productImages.Grunge}`,
+    title: "Grunge",
+    price: 450000.0,
+    category: "clothes",
+    sex: "male",
+  },
+  {
+    image: `${productImages.AthleticShoe}`,
+    title: "Athletic Shoe",
+    price: 300000.0,
+    category: "clothes",
+    sex: "female",
+  },
+  {
+    image: `${productImages.DolceGabbana}`,
+    title: "Dolce & Gabbana",
+    price: 100000.0,
+    category: "bag",
+    sex: "female",
+  },
+  {
+    image: `${productImages.CottagecoreStyle}`,
+    title: "Cottagecore-style ",
+    price: 450000.0,
+    category: "clothes",
+    sex: "female",
+  },
+  {
+    image: `${productImages.chicStyle}`,
+    title: "Chic-style",
+    price: 1500000.0,
+    category: "clothes",
+    sex: "female",
+  },
+  {
+    image: `${productImages.TrendyStyle}`,
+    title: "Trendy-style",
+    price: 700000.0,
+    category: "clothes",
+    sex: "female",
+  },
+  {
+    image: `${productImages.PreppyStyle}`,
+    title: "Preppy-style",
+    price: 1039.0,
+    category: "clothes",
+    sex: "female",
+  },
+  {
+    image: `${productImages.RockerStyle}`,
+    title: "Rocker-style",
+    price: 600000.0,
+    category: "clothes",
+    sex: "female",
+  },
+  {
+    image: `${productImages.GothicStyle}`,
+    title: "Gothic-style",
+    price: 400000.0,
+    category: "clothes",
+    sex: "female",
+  },
+  {
+    image: `${productImages.PunkStyle}`,
+    title: "Punk-style",
+    price: 400000.0,
+    category: "clothes",
+    sex: "female",
+  },
+  {
+    image: `${productImages.GirlyStyle}`,
+    title: "Girly-style",
+    price: 450000.0,
+    category: "clothes",
+    sex: "female",
+  },
+  {
+    image: `${productImages.EthniStyle}`,
+    title: "Ethni-style",
+    price: 320000.0,
+    category: "clothes",
+    sex: "female",
+  },
+  {
+    image: `${productImages.TomboyStyle}`,
+    title: "Tomboy-style",
+    price: 700000.0,
+    category: "clothes",
+    sex: "female",
+  },
+  {
+    image: `${productImages.AthleticShoe2}`,
+    title: "Athletic Shoe",
+    price: 100000,
+    category: "shoes",
+    sex: "male",
+  },
+  {
+    image: `${productImages.MaroonWedget}`,
+    title: "Maroon Wedget",
+    price: 80000,
+    category: "shoes",
+    sex: "female",
+  },
+
+  {
+    image: `${productImages.GreenLeatherShoe}`,
+    title: "Green Leather Shoe",
+    price: 150000,
+    category: "shoes",
+    sex: "male",
+  },
+  {
+    image: `${productImages.LolitaStyle}`,
+    title: "Lolita-style",
+    price: 250000,
+    category: "clothes",
+    sex: "female",
+  },
+  {
+    image: `${productImages.KawiiStyle}`,
+    title: "Kawii-style",
+    price: 430000,
+    category: "clothes",
+    sex: "female",
+  },
+  {
+    image: `${productImages.Stiletto}`,
+    title: "Stiletto ",
+    price: 300000,
+    category: "shoes",
+    sex: "female",
+  },
+  {
+    image: `${productImages.Suits}`,
+    title: "Suits",
+    price: 200000,
+    category: "clothes",
+    sex: "male",
+  },
+  {
+    image: `${productImages.MensCasual}`,
+    title: "Mens Casual",
+    price: 270000,
+    category: "clothes",
+    sex: "male",
+  },
+  {
+    image: `${productImages.ParisianStyle}`,
+    title: "Parisian-style",
+    price: 620000,
+    category: "clothes",
+    sex: "female",
+  },
+  {
+    image: `${productImages.AdidasSneakers}`,
+    title: "Adidas sneakers",
+    price: 400000,
+    category: "shoes",
+    sex: "male",
+  },
+  {
+    image: `${productImages.AthleisureStyle}`,
+    title: "Athleisure-style",
+    price: 240000,
+    category: "clothes",
+    sex: "female",
+  },
+  {
+    image: `${productImages.ClassicStyle}`,
+    title: "Classic-style",
+    price: 480000,
+    category: "clothes",
+    sex: "female",
+  },
+  {
+    image: `${productImages.AthleticShoe}`,
+    title: "Athletic Shoe",
+    price: 320000,
+    category: "shoes",
+    sex: "male",
+  },
+  {
+    image: `${productImages.StreetwearStyle}`,
+    title: "Streetwear-style",
+    price: 800000,
+    category: "clothes",
+    sex: "female",
+  },
+  {
+    image: `${productImages.RetroStyle}`,
+    title: "Retro-style",
+    price: 650000,
+    category: "clothes",
+    sex: "female",
+  },
+];
