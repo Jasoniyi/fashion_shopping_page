@@ -1,3 +1,4 @@
+import { url } from "inspector";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -11,6 +12,7 @@ const config: Config = {
       backgroundImage: {
         home_banner: "url('/banner.svg')",
         limited_offer: "url('/Offer.svg')",
+        other_banner: "url('/BannerPage.svg')",
       },
       colors: {
         btnColor: "var(--btn-color)",

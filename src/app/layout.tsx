@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Bebas } from "./Fonts/Fonts";
 import Footer from "./component/Footer/Footer";
+import { Providers } from "../app/providers";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,8 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={Bebas.className}>
-        {children}
-        <Footer />
+        <Providers>
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
