@@ -5,6 +5,11 @@ import { ArrowRightAlt } from "@mui/icons-material";
 import { bannerPdctsArray } from "../constants/constants";
 
 import LazyImage from "./component/LazyLoader/LazyLoader";
+import Collections from "./component/HomePage/Collections/Collections";
+import NewArrrivals from "./component/HomePage/NewArrivals/NewArrrivals";
+import LimitedOffer from "./component/HomePage/LimitedOffer/LimitedOffer";
+import TrendingBrands from "./component/HomePage/TrendingBrands/TrendingBrands";
+import Visit from "./component/HomePage/VisitInstagram/Visit";
 
 export default function Home() {
   return (
@@ -14,7 +19,7 @@ export default function Home() {
           <Navbar />
         </div>
         <div className="uppercase flex justify-center font-normal text-5xl mt-16">
-          <span className="w-[15em] text-center">
+          <span className="w-[16em] text-center font-medium">
             Fashionable, quality, durable and best shoes for everyone
           </span>
         </div>
@@ -35,6 +40,16 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className="px-4 md:px-[9.7rem]">
+        <Collections />
+      </div>
+      <div className="border-[1px]" />
+      <div className="px-4 md:px-[9.7rem]">
+        <NewArrrivals />
+      </div>
+      <LimitedOffer />
+      <TrendingBrands />
+      <Visit />
     </>
   );
 }

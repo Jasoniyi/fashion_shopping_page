@@ -1,16 +1,22 @@
 "use client";
+
 import React, { useEffect, useRef, useState } from "react";
 
 interface LazyImageProps {
   src: string;
   alt: string;
   className?: string;
+  placeholderSize?: string;
 }
 
-const placeHolder = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEA
-  AAABCAQAAAC1HAwCAAAAC0lEQVR42mNkqAcAAIUAgUW0RjgAAAAASUVORK5CYII=`;
+const placeHolder = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkqAcAAIUAgUW0RjgAAAAASUVORK5CYII=`;
 
-const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className }) => {
+const LazyImage: React.FC<LazyImageProps> = ({
+  src,
+  alt,
+  className,
+  placeholderSize,
+}) => {
   const [loaded, setLoaded] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
 
@@ -46,8 +52,8 @@ const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className }) => {
           className={className}
           style={{
             position: "absolute",
-            width: "100%",
-            height: "100%",
+            width: placeholderSize || "100%",
+            height: placeholderSize || "100%",
             objectFit: "cover",
           }}
         />
