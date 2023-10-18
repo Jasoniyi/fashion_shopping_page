@@ -1,3 +1,4 @@
+"use client";
 import {
   createContext,
   useReducer,
@@ -5,6 +6,7 @@ import {
   useContext,
   ReactNode,
   useState,
+  useEffect,
 } from "react";
 import { ProductsShape, productsArray } from "../../data/db";
 import { shopReducer } from "./shopReducer";
@@ -16,9 +18,12 @@ export type InitialStateType = {
   addToCart?: any;
   removeFromCart?: any;
   currentPage?: any;
-  setCurrentPage?: any;
-  currentProducts?: ProductsShape[];
+  currentProducts: ProductsShape[];
   productsPerPage?: any;
+  selectGender?: any;
+  paginate?: any;
+  selectCategory?: any;
+  selectAll?: any;
 };
 
 export type ChildrenType = {
@@ -29,6 +34,10 @@ const initialState: InitialStateType = {
   dbProducts: productsArray,
   productsInCart: [],
   total: 0,
+  currentProducts: [],
+  selectGender: "",
+  selectCategory: "",
+  selectAll: "",
 };
 
 const ShopContext = createContext(initialState);
@@ -40,13 +49,23 @@ const ShopProvider = ({ children }: ChildrenType) => {
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 15;
 
-  const indexOfLastProduct = currentPage * productsPerPage;
-  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = productsArray.slice(
-    indexOfFirstProduct,
-    indexOfLastProduct
-  );
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
+  useEffect(() => {
+    const indexOfLastProduct = currentPage * productsPerPage;
+    const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+    const currentProducts = productsArray.slice(
+      indexOfFirstProduct,
+      indexOfLastProduct
+    );
+
+    dispatch({
+      type: "UPDATE_CURRENT_PRODUCTS",
+      payload: {
+        currentProducts,
+      },
+    });
+  }, [currentPage]);
   // pagination
 
   const updatePrice = (products: ProductsShape[]) => {
@@ -61,7 +80,7 @@ const ShopProvider = ({ children }: ChildrenType) => {
     });
   };
 
-  const addToCart = (product: ProductsShape) => {
+  const addToCart = (product: ProductsShape[]) => {
     const updatedCart = state.productsInCart.concat(product);
     updatePrice(updatedCart);
 
@@ -73,15 +92,151 @@ const ShopProvider = ({ children }: ChildrenType) => {
     });
   };
 
+  const removeFromCart = (product: ProductsShape) => {
+    const updatedCart = state.productsInCart.filter(
+      (currentProduct: ProductsShape) => currentProduct.title !== product.title
+    );
+    updatePrice(updatedCart);
+
+    dispatch({
+      type: "REMOVE_FROM_CART",
+      payload: {
+        productsInCart: updatedCart,
+      },
+    });
+  };
+
+  // select Gender
+
+  const updateCurrentProductsByGender = (
+    state: InitialStateType,
+    selectedGender: string
+  ) => {
+    const currentProducts = state.dbProducts.filter(
+      (product) => product.sex === selectedGender
+    );
+
+    console.log("Updated current products:", currentProducts);
+
+    return {
+      ...state,
+      currentProducts,
+    };
+  };
+
+  const selectGender = (selectedGender: string) => {
+    dispatch({
+      type: "SELECT_GENDER",
+      payload: {
+        selectedGender,
+      },
+    });
+
+    const updatedState = updateCurrentProductsByGender(state, selectedGender);
+    dispatch({
+      type: "UPDATE_CURRENT_PRODUCTS",
+      payload: {
+        currentProducts: updatedState.currentProducts,
+      },
+    });
+  };
+
+  // select Gender
+
+  // select category
+
+  const updateCurrentProductsByCategory = (
+    state: InitialStateType,
+    selectedCategory: string
+  ) => {
+    const currentProducts = state.dbProducts.filter(
+      (product) => product.category === selectedCategory
+    );
+
+    console.log("Updated current products by category:", currentProducts);
+
+    return {
+      ...state,
+      currentProducts,
+    };
+  };
+
+  const selectCategory = (selectedCategory: string) => {
+    dispatch({
+      type: "SELECT_CATEGORY",
+      payload: {
+        selectedCategory,
+      },
+    });
+
+    const updatedCategoryState = updateCurrentProductsByCategory(
+      state,
+      selectedCategory
+    );
+    dispatch({
+      type: "UPDATE_CURRENT_PRODUCTS",
+      payload: {
+        currentProducts: updatedCategoryState.currentProducts,
+      },
+    });
+  };
+
+  // select category
+
+  // select All pdcts
+
+  const updateCurrentAllProducts = (
+    state: InitialStateType,
+    selectedAll: string
+  ) => {
+    const currentProducts = state.dbProducts.filter(
+      (product) => product.selectAll.toLowerCase() === selectedAll.toLowerCase()
+    );
+
+    console.log("Updated current all products :", currentProducts);
+
+    return {
+      ...state,
+      currentProducts,
+    };
+  };
+
+  const selectAll = (selectedAll: string) => {
+    dispatch({
+      type: "SELECT_ALL",
+      payload: {
+        selectedAll,
+      },
+    });
+
+    const updatedAllProducts = updateCurrentAllProducts(state, selectedAll);
+    dispatch({
+      type: "UPDATE_CURRENT_PRODUCTS",
+      payload: {
+        currentProducts: updatedAllProducts.currentProducts,
+      },
+    });
+  };
+
+  // select All pdcts ends
+
+  // add wishLists here
+
+  // add wishLists here ends
+
   const value = {
     productsInCart: state.productsInCart,
     total: state.total,
     addToCart,
     currentPage,
-    setCurrentPage,
-    currentProducts,
+    currentProducts: state.currentProducts,
     productsPerPage,
-    dbProducts: productsArray,
+    dbProducts: state.dbProducts,
+    removeFromCart,
+    selectGender,
+    paginate,
+    selectCategory,
+    selectAll,
   };
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;
 };
@@ -90,7 +245,7 @@ const useShop = () => {
   const context = useContext(ShopContext);
   // console.log(context.productsInCart, "useShop");
   // console.log(context.total, "total");
-  console.log(context.dbProducts, "initial Ps");
+  // console.log(context.dbProducts, "initial Ps");
 
   if (context === undefined) {
     throw new Error(`useShop must be in ShopContext`);

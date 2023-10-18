@@ -34,6 +34,7 @@ const products = () => {
           {categories.map((category, i) => (
             <div
               className={`p-1 ${Belle.className} text-center border-gray-200 border-[1px] rounded-md`}
+              key={`mobileCategories-${i}`}
             >
               {category.title}
             </div>
