@@ -59,8 +59,8 @@ const page = () => {
             <Navbar />
           </div>
         </div>
-        <div className="my-28 px-24">
-          <div className="grid grid-cols-3 gap-x-8">
+        <div className="my-28 px-8 md:px-24">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8">
             <div className="col-span-2 border-[1px] border-gray-100 h-fit">
               <div className="flex flex-col">
                 <h3 className="px-4 text-sm py-6">Shopping Card</h3>
@@ -136,7 +136,7 @@ const page = () => {
                     </TableBody>
                   </Table>
                 </TableContainer>
-                <div className="py-8 flex justify-between px-6 w-full font-semibold">
+                <div className="py-8 flex justify-between px-6 w-full font-semibold space-x-8 md:space-x-0">
                   <div className="">
                     <Button
                       title="Return to Shop"
