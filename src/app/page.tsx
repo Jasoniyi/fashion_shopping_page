@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Navbar from "./component/Navbar/Navbar";
 import Button from "./component/Button/Button";
@@ -26,7 +27,7 @@ export default function Home() {
         <div className="flex justify-center my-16">
           <Button
             title="shop now"
-            style="text-white py-2 px-6"
+            style="text-white py-2 px-6 bg-btnColor"
             icon={<ArrowRightAlt fontSize="medium" />}
           />
         </div>

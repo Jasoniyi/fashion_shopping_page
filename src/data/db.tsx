@@ -7,6 +7,7 @@ export interface ProductsShape {
   category: string;
   sex: string;
   selectAll: string;
+  quantity?: number;
 }
 
 export const productsArray: ProductsShape[] = [
@@ -17,6 +18,7 @@ export const productsArray: ProductsShape[] = [
     category: "women_clothes",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.steadyMode}`,
@@ -25,6 +27,7 @@ export const productsArray: ProductsShape[] = [
     category: "men_clothes",
     sex: "MEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.Grunge}`,
@@ -33,6 +36,7 @@ export const productsArray: ProductsShape[] = [
     category: "women_clothes",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.AthleticShoe}`,
@@ -41,6 +45,7 @@ export const productsArray: ProductsShape[] = [
     category: "shoes",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.DolceGabbana}`,
@@ -49,6 +54,7 @@ export const productsArray: ProductsShape[] = [
     category: "bag",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.CottagecoreStyle}`,
@@ -57,6 +63,7 @@ export const productsArray: ProductsShape[] = [
     category: "women_clothes",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.chicStyle}`,
@@ -65,6 +72,7 @@ export const productsArray: ProductsShape[] = [
     category: "women_clothes",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.TrendyStyle}`,
@@ -73,6 +81,7 @@ export const productsArray: ProductsShape[] = [
     category: "women_clothes",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.PreppyStyle}`,
@@ -81,6 +90,7 @@ export const productsArray: ProductsShape[] = [
     category: "women_clothes",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.RockerStyle}`,
@@ -89,6 +99,7 @@ export const productsArray: ProductsShape[] = [
     category: "women_clothes",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.GothicStyle}`,
@@ -97,6 +108,7 @@ export const productsArray: ProductsShape[] = [
     category: "women_clothes",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.PunkStyle}`,
@@ -105,6 +117,7 @@ export const productsArray: ProductsShape[] = [
     category: "women_clothes",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.GirlyStyle}`,
@@ -113,6 +126,7 @@ export const productsArray: ProductsShape[] = [
     category: "women_clothes",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.EthniStyle}`,
@@ -129,6 +143,7 @@ export const productsArray: ProductsShape[] = [
     category: "women_clothes",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.AthleticShoe2}`,
@@ -137,6 +152,7 @@ export const productsArray: ProductsShape[] = [
     category: "shoes",
     sex: "MEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.MaroonWedget}`,
@@ -145,6 +161,7 @@ export const productsArray: ProductsShape[] = [
     category: "shoes",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
 
   {
@@ -154,6 +171,7 @@ export const productsArray: ProductsShape[] = [
     category: "shoes",
     sex: "MEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.LolitaStyle}`,
@@ -162,6 +180,7 @@ export const productsArray: ProductsShape[] = [
     category: "women_clothes",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.KawiiStyle}`,
@@ -170,6 +189,7 @@ export const productsArray: ProductsShape[] = [
     category: "women_clothes",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.Stiletto}`,
@@ -178,6 +198,7 @@ export const productsArray: ProductsShape[] = [
     category: "shoes",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.Suits}`,
@@ -186,6 +207,7 @@ export const productsArray: ProductsShape[] = [
     category: "men_clothes",
     sex: "MEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.MensCasual}`,
@@ -194,6 +216,7 @@ export const productsArray: ProductsShape[] = [
     category: "men_clothes",
     sex: "MEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.ParisianStyle}`,
@@ -202,6 +225,7 @@ export const productsArray: ProductsShape[] = [
     category: "women_clothes",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.AdidasSneakers}`,
@@ -210,6 +234,7 @@ export const productsArray: ProductsShape[] = [
     category: "shoes",
     sex: "MEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.AthleisureStyle}`,
@@ -218,6 +243,7 @@ export const productsArray: ProductsShape[] = [
     category: "women_clothes",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.ClassicStyle}`,
@@ -226,6 +252,7 @@ export const productsArray: ProductsShape[] = [
     category: "women_clothes",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.AthleticShoe}`,
@@ -234,6 +261,7 @@ export const productsArray: ProductsShape[] = [
     category: "shoes",
     sex: "MEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.StreetwearStyle}`,
@@ -242,6 +270,7 @@ export const productsArray: ProductsShape[] = [
     category: "women_clothes",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
   {
     image: `${productImages.RetroStyle}`,
@@ -250,5 +279,6 @@ export const productsArray: ProductsShape[] = [
     category: "women_clothes",
     sex: "WOMEN",
     selectAll: "all",
+    quantity: 1,
   },
 ];
