@@ -224,6 +224,8 @@ const ShopProvider = ({ children }: ChildrenType) => {
 
   // add wishLists here ends
 
+  // compute products total
+
   const value = {
     productsInCart: state.productsInCart,
     total: state.total,
