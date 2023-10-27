@@ -116,4 +116,6 @@ export const productImages: ImageShape = {
   dollar:
     "https://res.cloudinary.com/dt8whfj0k/image/upload/v1698098007/fashion_shopping/CurrencyDollar_y9pbdp.svg",
   card: "https://res.cloudinary.com/dt8whfj0k/image/upload/v1698098007/fashion_shopping/CreditCard_kp92x3.svg",
+  notFound:
+    "https://res.cloudinary.com/dt8whfj0k/image/upload/v1698437597/fashion_shopping/Group_1000003484_hil6ec.svg",
 };
