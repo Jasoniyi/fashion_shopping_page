@@ -107,4 +107,13 @@ export const productImages: ImageShape = {
     "https://res.cloudinary.com/dt8whfj0k/image/upload/v1696114859/fashion_shopping/Dolce_Gabbana_yk5qlk.svg",
   EmoStyle:
     "https://res.cloudinary.com/dt8whfj0k/image/upload/v1696114874/fashion_shopping/Emo-style_1_j1vbld.svg",
+  venmo:
+    "https://res.cloudinary.com/dt8whfj0k/image/upload/v1698098007/fashion_shopping/venmo_hxaib9.svg",
+  paypal:
+    "https://res.cloudinary.com/dt8whfj0k/image/upload/v1698098007/fashion_shopping/paypal_yqy9oz.svg",
+  amazon:
+    "https://res.cloudinary.com/dt8whfj0k/image/upload/v1698098007/fashion_shopping/amazon-icon-1_1_yvcufb.svg",
+  dollar:
+    "https://res.cloudinary.com/dt8whfj0k/image/upload/v1698098007/fashion_shopping/CurrencyDollar_y9pbdp.svg",
+  card: "https://res.cloudinary.com/dt8whfj0k/image/upload/v1698098007/fashion_shopping/CreditCard_kp92x3.svg",
 };

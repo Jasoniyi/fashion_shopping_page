@@ -16,7 +16,6 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { useShop } from "../context/ShopContext";
 import Button from "../component/Button/Button";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { ProductsArrayShape } from "../component/HomePage/NewArrivals/NewArrrivals";
 import CardTotals from "./cardTotals";
 
