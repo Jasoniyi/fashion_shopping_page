@@ -25,7 +25,7 @@ export default function NotFound() {
           />
         </div>
         <div className="font-medium">404, Page not found</div>
-        <span className="text-xs w-[35em]">
+        <span className="text-xs px-4 md:w-[35em]">
           Something went wrong. It’s look that your requested could not be
           found. It’s look like the link is broken or the page is removed.
         </span>
