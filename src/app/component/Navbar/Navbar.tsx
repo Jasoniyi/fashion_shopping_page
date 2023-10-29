@@ -8,7 +8,7 @@ import { useShop } from "@/app/context/ShopContext";
 const Jarkarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 const navbar = () => {
-  const { productsInCart } = useShop();
+  const { productsInCart, productsInWishlist } = useShop();
   return (
     <div className={Jarkarta.className}>
       {/* --- Mobile view --- */}
@@ -36,7 +36,9 @@ const navbar = () => {
             <ul className="flex text-sm font-medium">
               <li className="">Search</li>
               <li className="border-[1px] mx-6" />
-              <li className="">Wishlist (0)</li>
+              <Link href="/wishlist">
+                <li className="">Wishlist ({productsInWishlist.length})</li>
+              </Link>
               <li className="border-[1px] mx-6" />
               <Link href="/shopping_cart">
                 <li className="">Cart ({productsInCart.length})</li>

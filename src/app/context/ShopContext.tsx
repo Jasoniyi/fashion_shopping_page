@@ -14,6 +14,7 @@ import { shopReducer } from "./shopReducer";
 export type InitialStateType = {
   dbProducts: ProductsShape[];
   productsInCart: ProductsShape[];
+  productsInWishlist: ProductsShape[];
   total: number;
   addToCart?: any;
   removeFromCart?: any;
@@ -24,6 +25,8 @@ export type InitialStateType = {
   paginate?: any;
   selectCategory?: any;
   selectAll?: any;
+  addToWishlist?: any;
+  removeFromWishlist?: any;
 };
 
 export type ChildrenType = {
@@ -38,6 +41,7 @@ const initialState: InitialStateType = {
   selectGender: "",
   selectCategory: "",
   selectAll: "",
+  productsInWishlist: [],
 };
 
 const ShopContext = createContext(initialState);
@@ -222,6 +226,32 @@ const ShopProvider = ({ children }: ChildrenType) => {
 
   // add wishLists here
 
+  const addToWishlist = (product: ProductsShape[]) => {
+    const updatedCart = state.productsInWishlist.concat(product);
+    updatePrice(updatedCart);
+
+    dispatch({
+      type: "ADD_TO_WISHLIST",
+      payload: {
+        productsInWishlist: updatedCart,
+      },
+    });
+  };
+
+  const removeFromWishlist = (product: ProductsShape) => {
+    const updatedCart = state.productsInWishlist.filter(
+      (currentProduct: ProductsShape) => currentProduct.title !== product.title
+    );
+    updatePrice(updatedCart);
+
+    dispatch({
+      type: "REMOVE_FROM_WISHLIST",
+      payload: {
+        productsInWishlist: updatedCart,
+      },
+    });
+  };
+
   // add wishLists here ends
 
   // compute products total
@@ -239,6 +269,9 @@ const ShopProvider = ({ children }: ChildrenType) => {
     paginate,
     selectCategory,
     selectAll,
+    productsInWishlist: state.productsInWishlist,
+    addToWishlist,
+    removeFromWishlist,
   };
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;
 };
