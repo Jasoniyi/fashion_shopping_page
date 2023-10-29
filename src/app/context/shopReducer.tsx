@@ -21,10 +21,23 @@ export const shopReducer = (state: InitialStateType, action: ActionType) => {
         productsInCart: payload.productsInCart,
       };
 
+    case "ADD_TO_WISHLIST":
+      console.log("wishlist");
+      return {
+        ...state,
+        productsInWishlist: payload.productsInWishlist,
+      };
+
     case "REMOVE_FROM_CART":
       return {
         ...state,
         productsInCart: payload.productsInCart,
+      };
+
+    case "REMOVE_FROM_WISHLIST":
+      return {
+        ...state,
+        productsInWishlist: payload.productsInWishlist,
       };
 
     case "SELECT_GENDER":

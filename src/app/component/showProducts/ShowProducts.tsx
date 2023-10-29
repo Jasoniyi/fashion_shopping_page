@@ -21,7 +21,7 @@ const ShowProducts = () => {
     }
   };
 
-  console.log(currentProducts, "currentPdt");
+  // console.log(currentProducts, "currentPdt");
 
   return (
     <div>

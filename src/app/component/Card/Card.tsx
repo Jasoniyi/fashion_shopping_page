@@ -10,10 +10,10 @@ import {
 import { ProductsArrayShape } from "../HomePage/NewArrivals/NewArrrivals";
 import { Jarkarta } from "../../Fonts/Fonts";
 import { useShop } from "../../context/ShopContext";
+import WishList from "./wishList";
 
 const Card = ({ image, title, price }: ProductsArrayShape) => {
   const [isInCart, setIsInCart] = useState(false);
-  const [wishList, setWishList] = useState(false);
 
   const { addToCart, productsInCart, removeFromCart } = useShop();
 
@@ -53,17 +53,7 @@ const Card = ({ image, title, price }: ProductsArrayShape) => {
       <div className="">
         <Image alt={title} src={image} width={300} height={400} />
       </div>
-
-      {/* <div
-        className="absolute right-4 bottom-20 w-8 h-8 bg-btnColor rounded-full flex justify-center items-center text-white cursor-pointer"
-        // onClick={}
-      >
-        {wishList ? (
-          <Favorite sx={{ fontSize: 17 }} />
-        ) : (
-          <FavoriteBorder sx={{ fontSize: 17 }} />
-        )}
-      </div> */}
+      <WishList title={title} image={image} price={price} />
 
       <div className="flex space-x-4 w-[18rem]">
         <div className="flex-grow">
