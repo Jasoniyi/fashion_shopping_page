@@ -156,6 +156,7 @@ const ProductCategories = () => {
                   }}
                   name="bag"
                 />
+
                 <FormControlLabel
                   value="jewelery"
                   control={<Radio />}
@@ -175,7 +176,7 @@ const ProductCategories = () => {
             <div className="border-[1px] w-[7em]" />
           </div>
         </div>
-        <div className="mt-8">
+        {/* <div className="mt-8">
           price
           <div className={`${Belle.className} py-4`}>
             <FormControl>
@@ -248,7 +249,7 @@ const ProductCategories = () => {
               </RadioGroup>
             </FormControl>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
