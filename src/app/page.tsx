@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import Navbar from "./component/Navbar/Navbar";
 import Button from "./component/Button/Button";
 import { ArrowRightAlt } from "@mui/icons-material";
@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       <div className="bg-home_banner w-screen">
-        <div className="py-8 px-16">
+        <div className="py-4 px-16">
           <Navbar />
         </div>
         <div className="uppercase flex justify-center font-normal text-5xl mt-16">
