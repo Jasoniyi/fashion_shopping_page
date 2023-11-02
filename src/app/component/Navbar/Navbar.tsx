@@ -4,6 +4,7 @@ import Link from "next/link";
 import Logo from "../../../../public/Logo.svg";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { useShop } from "@/app/context/ShopContext";
+import MobileMenu from "../MobileMenu/mobileMenu";
 
 const Jarkarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
@@ -11,8 +12,6 @@ const navbar = () => {
   const { productsInCart, productsInWishlist } = useShop();
   return (
     <div className={Jarkarta.className}>
-      {/* --- Mobile view --- */}
-
       {/* --- desktop view --- */}
       <div className="hidden md:block bg-white py-4 px-8">
         <div className="flex items-center">
