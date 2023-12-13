@@ -224,6 +224,8 @@ const ShopProvider = ({ children }: ChildrenType) => {
 
   // select All pdcts ends
 
+  //  select Jewelery
+
   // add wishLists here
 
   const addToWishlist = (product: ProductsShape[]) => {
@@ -278,9 +280,6 @@ const ShopProvider = ({ children }: ChildrenType) => {
 
 const useShop = () => {
   const context = useContext(ShopContext);
-  // console.log(context.productsInCart, "useShop");
-  // console.log(context.total, "total");
-  // console.log(context.dbProducts, "initial Ps");
 
   if (context === undefined) {
     throw new Error(`useShop must be in ShopContext`);

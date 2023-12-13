@@ -20,10 +20,6 @@ const page = () => {
   };
   const [selectedValue, setSelectedValue] = useState(null);
 
-  //   const handleRadioBtnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //     setSelectedValue(event.target.value);
-  //   };
-
   const handleRadioBtnChange = (optionValue: any) => {
     setSelectedValue(optionValue);
   };

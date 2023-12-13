@@ -7,14 +7,10 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import { useShop } from "../../context/ShopContext";
 
-const ProductCategories = () => {
+const ProductCategories = ({ onCategoryChange }: any) => {
   const { selectGender, selectCategory, selectAll } = useShop();
 
-  const [value, setValue] = useState("female");
-
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue((event.target as HTMLInputElement).value);
-  };
+  const [value, setValue] = useState("");
 
   const handleGenderChange = (event: ChangeEvent<HTMLInputElement>) => {
     const selectedGender = (event.target as HTMLInputElement).value;
@@ -31,13 +27,21 @@ const ProductCategories = () => {
 
     selectCategory(selectedCategory);
     console.log(selectedCategory, "category");
+
+    if (selectedCategory === "jewelery") {
+    } else {
+      selectCategory(selectedCategory);
+    }
+
+    // Pass selected category to parent component
+    onCategoryChange(selectedCategory);
   };
 
   const handleAll = (event: ChangeEvent<HTMLInputElement>) => {
     const selectedAll = (event.target as HTMLInputElement).name;
     setValue(selectedAll);
 
-    selectCategory(selectedAll);
+    selectAll(selectedAll);
     console.log(selectedAll, "all");
   };
 
@@ -132,7 +136,7 @@ const ProductCategories = () => {
                     fontSize: "0.6em",
                     textTransform: "uppercase",
                   }}
-                  name="men_clothes"
+                  name="Men Clothing"
                 />
                 <FormControlLabel
                   value="Women Clothing"
@@ -143,10 +147,10 @@ const ProductCategories = () => {
                     fontSize: "0.6em",
                     textTransform: "uppercase",
                   }}
-                  name="women_clothes"
+                  name="Women Clothing"
                 />
                 <FormControlLabel
-                  value="bags"
+                  value="bag"
                   control={<Radio />}
                   label="bags"
                   disableTypography={true}
@@ -176,80 +180,6 @@ const ProductCategories = () => {
             <div className="border-[1px] w-[7em]" />
           </div>
         </div>
-        {/* <div className="mt-8">
-          price
-          <div className={`${Belle.className} py-4`}>
-            <FormControl>
-              <RadioGroup
-                aria-labelledby="demo-controlled-radio-buttons-group"
-                name="controlled-radio-buttons-group"
-                value={value}
-                onChange={handleChange}
-              >
-                <FormControlLabel
-                  value="all"
-                  control={<Radio />}
-                  label="all"
-                  disableTypography={true}
-                  sx={{
-                    fontSize: "0.6em",
-                    textTransform: "uppercase",
-                  }}
-                />
-                <FormControlLabel
-                  value="₦0"
-                  control={<Radio />}
-                  label="₦0 - ₦100,000"
-                  disableTypography={true}
-                  sx={{
-                    fontSize: "0.6em",
-                    textTransform: "uppercase",
-                  }}
-                />
-                <FormControlLabel
-                  value="100"
-                  control={<Radio />}
-                  label="₦100,000 - ₦500,000"
-                  disableTypography={true}
-                  sx={{
-                    fontSize: "0.6em",
-                    textTransform: "uppercase",
-                  }}
-                />
-                <FormControlLabel
-                  value="500"
-                  control={<Radio />}
-                  label="₦500,000 - ₦1,000,000"
-                  disableTypography={true}
-                  sx={{
-                    fontSize: "0.6em",
-                    textTransform: "uppercase",
-                  }}
-                />
-                <FormControlLabel
-                  value="1000"
-                  control={<Radio />}
-                  label="₦1,000,000 - ₦2,000,000"
-                  disableTypography={true}
-                  sx={{
-                    fontSize: "0.6em",
-                    textTransform: "uppercase",
-                  }}
-                />
-                <FormControlLabel
-                  value="2000"
-                  control={<Radio />}
-                  label="₦2,000,000 and above"
-                  disableTypography={true}
-                  sx={{
-                    fontSize: "0.6em",
-                    textTransform: "uppercase",
-                  }}
-                />
-              </RadioGroup>
-            </FormControl>
-          </div>
-        </div> */}
       </div>
     </>
   );

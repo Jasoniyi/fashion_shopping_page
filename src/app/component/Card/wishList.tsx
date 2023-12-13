@@ -40,7 +40,7 @@ const WishList = ({ title, image, price }: ProductsArrayShape) => {
   return (
     <>
       <div
-        className="absolute right-4 bottom-20 w-8 h-8 bg-btnColor rounded-full flex justify-center items-center text-white cursor-pointer"
+        className="absolute right-4 top-1 w-8 h-8 bg-btnColor rounded-full flex justify-center items-center text-white cursor-pointer"
         onClick={handleWishList}
       >
         {wishList ? (

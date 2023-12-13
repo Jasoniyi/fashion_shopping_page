@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,6 +26,11 @@ const sideVariants = {
 const MobileMenu = ({ isOpen, handleLinkClick }: any) => {
   const pathname = usePathname();
   const { productsInCart, productsInWishlist } = useShop();
+
+  useEffect(() => {
+    console.log("MyComponent rendered in products page");
+  }, []); // The empty dependency array ensures that this effect runs only once after the initial render
+
   return (
     <div
       className={`flex lg:hidden justify-end bg-[#FFF0E3] h-screen ${Jarkarta.className} `}

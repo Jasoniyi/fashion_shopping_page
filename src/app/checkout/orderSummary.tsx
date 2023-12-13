@@ -8,7 +8,7 @@ import Button from "../component/Button/Button";
 const OrderSummary = () => {
   const { productsInCart, removeFromCart } = useShop();
 
-  const [quantities, setQuantities] = useState(productsInCart.map(() => 1));
+  const [quantities] = useState(productsInCart.map(() => 1));
 
   const calculateTotalPrice = () => {
     let total = 0;

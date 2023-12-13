@@ -43,13 +43,18 @@ const page = () => {
     }
   };
 
+  useEffect(() => {
+    console.log("MyComponent rendered in wishlist");
+  }, []); // The empty dependency array ensures that this effect runs only once after the initial render
+
   return (
     <div className={Jarkarta.className}>
-      <div className="bg-other_banner">
+      <div className="hidden md:block bg-other_banner">
         <div className="py-32 px-16">
           <Navbar />
         </div>
       </div>
+
       <div className="px-24 py-20">
         <div className="border-[1px] border-gray-200 h-fit flex flex-col">
           <h3 className="text-sm py-6 font-semibold px-4">Wishlist</h3>
