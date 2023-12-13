@@ -16,10 +16,6 @@ const TrendingBrands = () => {
           title="Our Trending brands"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet at nunc elit in porttitor tortor nulla."
         />
-        <div className="flex text-black">
-          <KeyboardBackspace fontSize="medium" />
-          <ArrowRightAlt fontSize="large" />
-        </div>
       </div>
       <div className="py-16 px-4 md:px-[9.7rem]">
         <Branding />

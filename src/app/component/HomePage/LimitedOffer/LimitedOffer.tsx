@@ -28,8 +28,9 @@ const LimitedOffer = () => {
         <div className="py-16">
           <Button
             title="shop now"
-            style="text-white py-2 px-6"
+            style="text-white py-2 px-6 bg-btnColor"
             icon={<ArrowRightAlt fontSize="medium" />}
+            link="/products"
           />
         </div>
       </div>
