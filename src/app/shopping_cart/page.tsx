@@ -50,10 +50,14 @@ const page = () => {
 
   const total = calculateTotalPrice();
 
+  useEffect(() => {
+    console.log("MyComponent rendered in shopping cart");
+  }, []); // The empty dependency array ensures that this effect runs only once after the initial render
+
   const memoizedComponent = useMemo(
     () => (
       <div className={Jarkarta.className}>
-        <div className="bg-other_banner">
+        <div className="hidden md:block bg-other_banner">
           <div className="py-32 px-16">
             <Navbar />
           </div>

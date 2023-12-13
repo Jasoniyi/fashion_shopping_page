@@ -27,9 +27,7 @@ export default function RootLayout({
   };
 
   const handleLinkClick = () => {
-    setTimeout(() => {
-      setOpen(false);
-    }, 1500);
+    setOpen(false);
   };
 
   return (

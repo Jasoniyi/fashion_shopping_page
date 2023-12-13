@@ -19,7 +19,9 @@ const navbar = () => {
             <ul className="flex text-sm font-medium cursor-pointer">
               <li className="">Stories</li>
               <li className="border-[1px] mx-6" />
-              <li className="">New In</li>
+              <Link href="/">
+                <li className="">New In</li>
+              </Link>
               <li className="border-[1px] mx-6" />
               <Link href="/products">
                 <li className="">All Products</li>

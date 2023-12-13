@@ -8,6 +8,9 @@ export interface ProductsArrayShape {
   title: string;
   price: number | string;
   image: string;
+  showWishlist?: boolean;
+  width?: number;
+  height?: number;
 }
 
 const productArray: ProductsArrayShape[] = [
@@ -42,6 +45,9 @@ const NewArrrivals = () => {
             title={pdct.title}
             price={pdct.price}
             key={`newArrivals-${i}`}
+            showWishlist={false}
+            width={350}
+            height={150}
           />
           //   <CardSkeleton />
         ))}
