@@ -1,21 +1,27 @@
 "use client";
 import React, { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
-import {
-  ShoppingCart,
-  FavoriteBorder,
-  Delete,
-  Favorite,
-} from "@mui/icons-material";
+import { ShoppingCart, Delete } from "@mui/icons-material";
 import { ProductsArrayShape } from "../HomePage/NewArrivals/NewArrrivals";
 import { Jarkarta } from "../../Fonts/Fonts";
-import { useShop } from "../../context/ShopContext";
+import { UseShop } from "../../context/ShopContext";
+import WishList from "./wishList";
+import { LazyImage } from "../ImageLoading/LazyLoader/LazyLoader";
+import ImageLoader from "../ImageLoading/ImageLoader/ImageLoader";
 
-const Card = ({ image, title, price }: ProductsArrayShape) => {
+const Card = ({
+  image,
+  title,
+  price,
+  showWishlist,
+  width,
+  height,
+  loaderWidth,
+}: ProductsArrayShape) => {
   const [isInCart, setIsInCart] = useState(false);
-  const [wishList, setWishList] = useState(false);
+  const [loadImage, setLoadImage] = useState<boolean>(false);
 
-  const { addToCart, productsInCart, removeFromCart } = useShop();
+  const { addToCart, productsInCart, removeFromCart } = UseShop();
 
   const checkIfProductIsInCart = useCallback(() => {
     const productIsInCart = productsInCart?.find(
@@ -51,25 +57,39 @@ const Card = ({ image, title, price }: ProductsArrayShape) => {
   return (
     <div className="flex flex-col space-y-4 relative">
       <div className="">
-        <Image alt={title} src={image} width={300} height={400} />
+        <div className="z-50">
+          {loadImage ? null : (
+            <ImageLoader
+              isFullImage={true}
+              bgColor={"#E9E8E4"}
+              className="borderRadius60 section1 md:h-[30em] h-[29em]"
+              width={loaderWidth}
+            />
+          )}
+          <LazyImage
+            alt={title}
+            src={image}
+            objectFit="cover"
+            errorHeight=""
+            height=""
+            width=""
+            className={`${loadImage ? "visible w-full" : "invisible h-0"}`}
+            dataImage="#cf5628"
+            onLoad={setLoadImage}
+          />
+        </div>
       </div>
+      {showWishlist ? (
+        <WishList title={title} image={image} price={price} />
+      ) : null}
 
-      {/* <div
-        className="absolute right-4 bottom-20 w-8 h-8 bg-btnColor rounded-full flex justify-center items-center text-white cursor-pointer"
-        // onClick={}
-      >
-        {wishList ? (
-          <Favorite sx={{ fontSize: 17 }} />
-        ) : (
-          <FavoriteBorder sx={{ fontSize: 17 }} />
-        )}
-      </div> */}
-
-      <div className="flex space-x-4 w-[18rem]">
+      <div className="flex space-x-4 w-[22rem] px-2">
         <div className="flex-grow">
           <div className="flex flex-col text-sm font-medium">
             <span className={Jarkarta.className}>{title}</span>
-            <span className={Jarkarta.className}>₦ {price}.00</span>
+            <span className={Jarkarta.className}>
+              ₦ {price.toLocaleString()}.00
+            </span>
           </div>
         </div>
         <div

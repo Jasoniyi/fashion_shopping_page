@@ -1,20 +1,29 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../component/Navbar/Navbar";
 import { Jarkarta } from "../Fonts/Fonts";
 
 import MobileCategory from "../component/Mobile/products";
 import ShowProducts from "../component/showProducts/ShowProducts";
 import ProductCategories from "../component/ProductPage/productCategories";
-import { useShop } from "../context/ShopContext";
+import { UseShop } from "../context/ShopContext";
 import { productsArray } from "@/data/db";
 
-const page = () => {
-  const { currentPage, productsPerPage } = useShop();
+const Page = () => {
+  const { currentPage, productsPerPage } = UseShop();
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  const handleCategoryChange = (category: any) => {
+    setSelectedCategory(category);
+  };
+
+  useEffect(() => {
+    console.log("MyComponent rendered in products page");
+  }, []); // The empty dependency array ensures that this effect runs only once after the initial render
 
   return (
     <div>
-      <div className="bg-other_banner">
+      <div className="hidden md:block bg-other_banner">
         <div className="py-32 px-16">
           <Navbar />
         </div>
@@ -33,12 +42,12 @@ const page = () => {
                   Showing {currentPage} - {productsPerPage} out of{" "}
                   {productsArray?.length} products
                 </span>
-                <ProductCategories />
+                <ProductCategories onCategoryChange={handleCategoryChange} />
               </div>
             </div>
           </div>
           <div className="col-span-4">
-            <ShowProducts />
+            <ShowProducts selectedCategory={selectedCategory} />
           </div>
         </div>
       </div>
@@ -46,4 +55,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
