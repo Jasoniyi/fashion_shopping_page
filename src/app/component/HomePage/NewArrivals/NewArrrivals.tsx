@@ -11,6 +11,7 @@ export interface ProductsArrayShape {
   showWishlist?: boolean;
   width?: number;
   height?: number;
+  loaderWidth?: string;
 }
 
 const productArray: ProductsArrayShape[] = [

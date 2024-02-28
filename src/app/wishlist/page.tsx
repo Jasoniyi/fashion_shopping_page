@@ -8,17 +8,17 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import { useShop } from "../context/ShopContext";
+import { UseShop } from "../context/ShopContext";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import Image from "next/image";
 import Button from "../component/Button/Button";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
-const page = () => {
+const Page = () => {
   const [isInCart, setIsInCart] = useState(false);
 
   const { productsInWishlist, removeFromWishlist, addToCart, productsInCart } =
-    useShop();
+    UseShop();
 
   useEffect(() => {
     const checkIfProductIsInCart = (product: any) => {
@@ -124,4 +124,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

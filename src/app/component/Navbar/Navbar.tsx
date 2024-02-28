@@ -3,13 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../../../public/Logo.svg";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import { useShop } from "@/app/context/ShopContext";
+import { UseShop } from "@/app/context/ShopContext";
 import MobileMenu from "../MobileMenu/mobileMenu";
 
 const Jarkarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 const navbar = () => {
-  const { productsInCart, productsInWishlist } = useShop();
+  const { productsInCart, productsInWishlist } = UseShop();
   return (
     <div className={Jarkarta.className}>
       {/* --- desktop view --- */}

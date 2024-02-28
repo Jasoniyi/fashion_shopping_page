@@ -17,16 +17,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 import { useState } from "react";
 import ImageLoader from "./component/ImageLoading/ImageLoader/ImageLoader";
-import Image from "next/image";
-import {
-  AnimatePresence,
-  motion,
-  LazyMotion,
-  domAnimation,
-  m,
-} from "framer-motion";
-
-import { productImages } from "../constants/imagePaths";
 
 export default function Home() {
   const [loadedImageSectionOne, setLoadedImageSectionOne] =
@@ -57,7 +47,7 @@ export default function Home() {
           <div className="mt-8">
             <div className="flex items-end space-x-4">
               {bannerPdctsArray.map((item, i) => (
-                <div className="">
+                <div className="" key={`bannerPdcts-{i}`}>
                   <div className="z-50">
                     {loadedImageSectionOne ? null : (
                       <ImageLoader

@@ -6,11 +6,11 @@ import { Jarkarta } from "../Fonts/Fonts";
 import MobileCategory from "../component/Mobile/products";
 import ShowProducts from "../component/showProducts/ShowProducts";
 import ProductCategories from "../component/ProductPage/productCategories";
-import { useShop } from "../context/ShopContext";
+import { UseShop } from "../context/ShopContext";
 import { productsArray } from "@/data/db";
 
-const page = () => {
-  const { currentPage, productsPerPage } = useShop();
+const Page = () => {
+  const { currentPage, productsPerPage } = UseShop();
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const handleCategoryChange = (category: any) => {
@@ -55,4 +55,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

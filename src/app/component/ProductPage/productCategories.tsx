@@ -5,10 +5,10 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
-import { useShop } from "../../context/ShopContext";
+import { UseShop } from "../../context/ShopContext";
 
 const ProductCategories = ({ onCategoryChange }: any) => {
-  const { selectGender, selectCategory, selectAll } = useShop();
+  const { selectGender, selectCategory, selectAll } = UseShop();
 
   const [value, setValue] = useState("");
 

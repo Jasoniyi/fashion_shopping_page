@@ -4,9 +4,8 @@ import Image from "next/image";
 import { ShoppingCart, Delete } from "@mui/icons-material";
 import { ProductsArrayShape } from "../HomePage/NewArrivals/NewArrrivals";
 import { Jarkarta } from "../../Fonts/Fonts";
-import { useShop } from "../../context/ShopContext";
+import { UseShop } from "../../context/ShopContext";
 import WishList from "./wishList";
-import CardSkeleton from "./CardSkeleton";
 import { LazyImage } from "../ImageLoading/LazyLoader/LazyLoader";
 import ImageLoader from "../ImageLoading/ImageLoader/ImageLoader";
 
@@ -17,11 +16,12 @@ const Card = ({
   showWishlist,
   width,
   height,
+  loaderWidth,
 }: ProductsArrayShape) => {
   const [isInCart, setIsInCart] = useState(false);
   const [loadImage, setLoadImage] = useState<boolean>(false);
 
-  const { addToCart, productsInCart, removeFromCart } = useShop();
+  const { addToCart, productsInCart, removeFromCart } = UseShop();
 
   const checkIfProductIsInCart = useCallback(() => {
     const productIsInCart = productsInCart?.find(
@@ -57,19 +57,13 @@ const Card = ({
   return (
     <div className="flex flex-col space-y-4 relative">
       <div className="">
-        {/* <Image
-          alt={title}
-          src={image}
-          width={width}
-          height={height}
-          objectFit="cover"
-        /> */}
         <div className="z-50">
           {loadImage ? null : (
             <ImageLoader
               isFullImage={true}
               bgColor={"#E9E8E4"}
-              className="borderRadius60 section1 md:h-[30em] h-[29em] md:w-[35em] w-[100%]"
+              className="borderRadius60 section1 md:h-[30em] h-[29em]"
+              width={loaderWidth}
             />
           )}
           <LazyImage

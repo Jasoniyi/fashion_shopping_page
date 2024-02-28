@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useShop } from "../context/ShopContext";
+import { UseShop } from "../context/ShopContext";
 import Totals from "../shopping_cart/Totals";
 import Image from "next/image";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Button from "../component/Button/Button";
 
 const OrderSummary = () => {
-  const { productsInCart, removeFromCart } = useShop();
+  const { productsInCart, removeFromCart } = UseShop();
 
   const [quantities] = useState(productsInCart.map(() => 1));
 
@@ -27,7 +27,10 @@ const OrderSummary = () => {
           <span className="my-6 text-sm">no products in cart</span>
         ) : (
           productsInCart.map((product, i) => (
-            <div className="flex flex-row space-x-2 items-center py-2">
+            <div
+              className="flex flex-row space-x-2 items-center py-2"
+              key={`pdctsInCart-${i}`}
+            >
               <div className="">
                 <Image
                   src={product.image}

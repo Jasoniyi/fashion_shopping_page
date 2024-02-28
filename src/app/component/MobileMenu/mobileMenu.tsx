@@ -6,7 +6,7 @@ import Logo from "../../../../public/Logo.svg";
 import { NavbarLinks } from "./typed";
 import { usePathname } from "next/navigation";
 import { Jarkarta } from "../../Fonts/Fonts";
-import { useShop } from "@/app/context/ShopContext";
+import { UseShop } from "@/app/context/ShopContext";
 
 const sideVariants = {
   closed: {
@@ -25,7 +25,7 @@ const sideVariants = {
 
 const MobileMenu = ({ isOpen, handleLinkClick }: any) => {
   const pathname = usePathname();
-  const { productsInCart, productsInWishlist } = useShop();
+  const { productsInCart, productsInWishlist } = UseShop();
 
   useEffect(() => {
     console.log("MyComponent rendered in products page");

@@ -278,7 +278,7 @@ const ShopProvider = ({ children }: ChildrenType) => {
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;
 };
 
-const useShop = () => {
+const UseShop = () => {
   const context = useContext(ShopContext);
 
   if (context === undefined) {
@@ -288,4 +288,4 @@ const useShop = () => {
   return context;
 };
 
-export { ShopProvider, useShop };
+export { ShopProvider, UseShop };

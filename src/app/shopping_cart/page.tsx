@@ -13,14 +13,14 @@ import TableRow from "@mui/material/TableRow";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { useShop } from "../context/ShopContext";
+import { UseShop } from "../context/ShopContext";
 import Button from "../component/Button/Button";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { ProductsArrayShape } from "../component/HomePage/NewArrivals/NewArrrivals";
 import CardTotals from "./cardTotals";
 
-const page = () => {
-  const { productsInCart, removeFromCart } = useShop();
+const Page = () => {
+  const { productsInCart, removeFromCart } = UseShop();
 
   const [quantities, setQuantities] = useState(productsInCart.map(() => 1));
 
@@ -168,4 +168,4 @@ const page = () => {
   return memoizedComponent;
 };
 
-export default page;
+export default Page;

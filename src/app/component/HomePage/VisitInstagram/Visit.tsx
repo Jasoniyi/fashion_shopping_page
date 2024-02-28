@@ -32,7 +32,7 @@ const Visit = () => {
       </div>
       <div className="py-12 flex space-x-10">
         {visitArray.map((item, i) => (
-          <div className="z-50">
+          <div className="z-50" key={`visit-${i}`}>
             {loadImage ? null : (
               <ImageLoader
                 isFullImage={true}

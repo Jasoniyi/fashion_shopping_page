@@ -68,7 +68,7 @@ const Branding = () => {
     <div className="">
       <Slider {...settings}>
         {brandArray.map((item, i) => (
-          <div className="flex space-x-4">
+          <div className="flex space-x-4" key={`branding-${i}`}>
             <Image
               src={item.image}
               alt={item.alt}

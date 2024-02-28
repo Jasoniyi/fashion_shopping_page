@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Belle } from "../../Fonts/Fonts";
-import { useShop } from "@/app/context/ShopContext";
+import { UseShop } from "@/app/context/ShopContext";
 
 type CategoryShape = {
   title: string;
@@ -49,7 +49,7 @@ const renderCategory = (
 };
 
 const Products = () => {
-  const { selectCategory, selectGender, selectAll } = useShop();
+  const { selectCategory, selectGender, selectAll } = UseShop();
 
   const handleGenderCategory = (title: string) => {
     selectGender(title);

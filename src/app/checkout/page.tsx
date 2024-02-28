@@ -12,7 +12,7 @@ import Image from "next/image";
 import { paymentOptions } from "@/constants/constants";
 import OrderSummary from "./orderSummary";
 
-const page = () => {
+const Page = () => {
   const [age, setAge] = React.useState("");
 
   const handleChange = (event: SelectChangeEvent) => {
@@ -293,4 +293,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { FavoriteBorder, Favorite } from "@mui/icons-material";
 import { ProductsArrayShape } from "../HomePage/NewArrivals/NewArrrivals";
-import { useShop } from "../../context/ShopContext";
+import { UseShop } from "../../context/ShopContext";
 
 const WishList = ({ title, image, price }: ProductsArrayShape) => {
-  const { productsInWishlist, addToWishlist, removeFromWishlist } = useShop();
+  const { productsInWishlist, addToWishlist, removeFromWishlist } = UseShop();
   const [wishList, setWishList] = useState(false);
 
   const checkIfProductIsInWishList = useCallback(() => {
