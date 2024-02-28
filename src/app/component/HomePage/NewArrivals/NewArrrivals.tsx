@@ -5,24 +5,28 @@ import CardSkeleton from "../../Card/CardSkeleton";
 import { productImages } from "../../../../constants/imagePaths";
 
 export interface ProductsArrayShape {
-  name: string;
-  price: number;
+  title: string;
+  price: number | string;
   image: string;
+  showWishlist?: boolean;
+  width?: number;
+  height?: number;
+  loaderWidth?: string;
 }
 
 const productArray: ProductsArrayShape[] = [
   {
-    name: "Athletic Shoe",
+    title: "Athletic Shoe",
     price: 39.0,
     image: `${productImages.newPdctOne}`,
   },
   {
-    name: "Maroon Wedget",
+    title: "Maroon Wedget",
     price: 39.0,
     image: `${productImages.newPdctTwo}`,
   },
   {
-    name: "Green Leather Shoe",
+    title: "Green Leather Shoe",
     price: 39.0,
     image: `${productImages.newPdctThree}`,
   },
@@ -39,9 +43,12 @@ const NewArrrivals = () => {
         {productArray.map((pdct, i) => (
           <Card
             image={pdct.image}
-            name={pdct.name}
+            title={pdct.title}
             price={pdct.price}
             key={`newArrivals-${i}`}
+            showWishlist={false}
+            width={350}
+            height={150}
           />
           //   <CardSkeleton />
         ))}
